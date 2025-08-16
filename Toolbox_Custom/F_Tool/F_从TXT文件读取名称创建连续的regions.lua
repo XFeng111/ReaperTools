@@ -163,12 +163,17 @@ reaper.Undo_BeginBlock()
 -- 获取当前光标位置作为起始点
 local current_pos = reaper.GetCursorPosition()
 local start_pos = current_pos
-local total_count = 0  -- 统计总创建数量
+local total_count = 0 -- 统计总创建数量
+local duration_counts = {}  -- 记录每种时长的数量
 
 -- 逐个区块创建region
 for _, block in ipairs(regions_data) do
   local duration = block.duration
   local color = get_region_color(duration)
+  local count = #block.names
+  
+  -- 记录该时长的数量
+  duration_counts[duration] = count
   
   -- 为当前区块的每个名称创建region
   for i, name in ipairs(block.names) do
@@ -181,13 +186,16 @@ for _, block in ipairs(regions_data) do
     start_pos = end_pos + 5
   end
   
-  total_count = total_count + #block.names
+  total_count = total_count + count
 end
 
 reaper.Undo_EndBlock("从TXT创建带不同时长的regions", -1)
 reaper.UpdateArrange()
 
 -- 显示创建结果
-local message = string.format("成功创建了 %d 个regions，共 %d 种不同时长", total_count, #regions_data)
-reaper.ShowMessageBox(message, "完成", 0)
+local message = "总计： " .. total_count .. " 个regions\n".."————————————\n\n"
+for duration, count in pairs(duration_counts) do
+    message = message .. "创建： " .. count .. " 个region，" .. duration .. "s\n"
+end
 
+reaper.ShowMessageBox(message, "完成", 0)
