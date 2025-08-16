@@ -2,6 +2,25 @@
   功能：从TXT文件读取带标记的名称创建连续的regions
   特点：通过"--数字--"标记区分不同时长，相同时长颜色一致，不同时长颜色区分
         每个region间隔5秒，从当前光标位置开始
+例如：
+  --5--
+  region1
+  region2
+
+  --10--
+  region3
+  region4
+
+  --30--
+  region5
+运行结果：
+region1：颜色A，5s
+region2：颜色A，5s
+
+region3：颜色B，10s
+region4：颜色B，10s
+
+region5：颜色C，30s
 ]]
 
 -- 选择要读取的TXT文件
