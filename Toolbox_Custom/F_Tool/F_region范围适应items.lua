@@ -1,12 +1,20 @@
 -- 调整Region的起始和结束边界，使其与区域内Item保持用户自定义的距离
 function Region_fit_items()
     -- 询问用户希望保持的距离（秒）
-    local retval, user_input = reaper.GetUserInputs("设置距离", 1, "与项目保持的距离(秒):", "0.1")
+    local retval, user_input = reaper.GetUserInputs("设置距离", 2, 
+        "起始距离(秒):,结束距离(秒):", 
+        "0.1,0.1")
     
-    -- 如果用户取消输入或输入无效，则退出
+    -- 如果用户取消输入，则退出
     if not retval then return end
-    local distance = tonumber(user_input)
-    if not distance or distance < 0 then
+    
+    -- 分割用户输入
+    local start_dist_str, end_dist_str = user_input:match("([^,]+),([^,]+)")
+    local start_distance = tonumber(start_dist_str)
+    local end_distance = tonumber(end_dist_str)
+    
+    -- 验证输入
+    if not start_distance or not end_distance or start_distance < 0 or end_distance < 0 then
         reaper.ShowMessageBox("请输入有效的非负数字", "输入错误", 0)
         return
     end
@@ -54,8 +62,8 @@ function Region_fit_items()
             -- 如果找到了item
             if earliest_item_start ~= nil and latest_item_end ~= nil then
                 -- 计算期望的region新边界（使用用户输入的距离）
-                local new_region_start = earliest_item_start - distance
-                local new_region_end = latest_item_end + distance
+                local new_region_start = earliest_item_start - start_distance
+                local new_region_end = latest_item_end + end_distance
                 
                 -- 只在需要时调整region边界（考虑浮点精度）
                 if math.abs(new_region_start - region_start) > 0.001 or 
