@@ -1,6 +1,7 @@
 --[[
   功能：从TXT文件读取带标记的名称创建连续的regions
   特点：通过"--数字--"标记区分不同时长，相同时长颜色一致，不同时长颜色区分
+        无标记则提示输入时长
         每个region间隔5秒，从当前光标位置开始
 例如：
   --5--
@@ -189,3 +190,4 @@ reaper.UpdateArrange()
 -- 显示创建结果
 local message = string.format("成功创建了 %d 个regions，共 %d 种不同时长", total_count, #regions_data)
 reaper.ShowMessageBox(message, "完成", 0)
+
