@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reapack>
+  <repositories>
+    <!-- 仓库基本信息 -->
+    <repository name="你的仓库名称" author="你的名字" url="仓库的raw地址（即这个index.xml的地址）"/>
+  </repositories>
+  <packages>
+    <!-- 包1的信息 -->
+    <package name="工具包名称" author="作者" version="1.0.0" license="MIT" description="工具描述">
+      <!-- 包内文件映射：本地安装路径 → GitHub原始文件地址 -->
+      <file target="Scripts/你的工具.lua">https://raw.githubusercontent.com/XFeng111/ReaperApi_Lua/main/Toolbox_Custom/你的工具.lua</file>
+      <!-- 可添加多个file标签对应不同文件 -->
+    </package>
+    <!-- 可添加多个package标签 -->
+  </packages>
+</reapack>
