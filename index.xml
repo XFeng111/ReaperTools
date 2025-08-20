@@ -3,29 +3,29 @@
   <!-- 仓库元数据：必须包含 -->
   <repositories>
     <repository 
-      name="ReaTools" 
+      name="F_ReaTools" 
       author="XFeng" 
       url="https://github.com/XFeng111/Reaper_Tools/raw/refs/heads/main/index.xml"  <!-- 此 XML 的 raw 地址 -->
     />
   </repositories>
 
   <!-- 包分类 -->
-  <category name="Tracks">
+  <category name="F_Tool">
     <!-- 包信息：name 是显示名称，type 固定为 "script" 表示脚本包 -->
     <package 
-      name="ReaChord: a chord track solution for REAPER 7" 
+      name="F_Tool: ReaTools for REAPER 7" 
       type="script" 
-      author="xupeng1206" 
-      version="1.6.0"  <!-- 版本号 -->
+      author="XFeng" 
+      version="1.0.0"  <!-- 版本号 -->
       license="未知"  <!-- 建议补充许可证（如 MIT） -->
-      description="ReaChord 和弦轨道解决方案"  <!-- 简要描述 -->
+      description="F_Tool "  <!-- 简要描述 -->
     >
       <!-- 版本信息：时间格式需符合 ISO 8601 -->
-      <version time="2025-04-14T06:52:18Z">
+      <version time="2025-08-20T06:52:18Z">
         <!-- 主脚本文件：main="true" 标记入口文件 -->
         <file 
-          target="Scripts/ReaChord/ReaChord_Main.lua"  <!-- 安装路径（Reaper 脚本目录下） -->
-          url="https://github.com/xupeng1206/ReaChord/raw/v1.6.0/ReaChord_Main.lua" 
+          target="Scripts/F_ReaTools/F_Tool/.lua"  <!-- 安装路径（Reaper 脚本目录下） -->
+          url="https://github.com/XFeng111/Reaper_Tools/raw/refs/heads/main/Toolbox_Custom/F_Tool/F_region%E8%8C%83%E5%9B%B4%E9%80%82%E5%BA%94items.lua" 
           type="script"
           main="true"
         />
@@ -40,27 +40,7 @@
           type="script"
         />
         <!-- 其他 Lua 脚本类似，省略... -->
-
-        <!-- 文档文件：type 改为 "doc" -->
-        <file 
-          target="Scripts/ReaChord/README.md" 
-          url="https://github.com/xupeng1206/ReaChord/raw/v1.6.0/README.md" 
-          type="doc"
-        />
-
-        <!-- 图片文件：type 改为 "image" -->
-        <file 
-          target="Scripts/ReaChord/ReaChord_About.jpg" 
-          url="https://github.com/xupeng1206/ReaChord/raw/v1.6.0/ReaChord_About.jpg" 
-          type="image"
-        />
-
-        <!-- 轨道模板：type 改为 "tracktemplate" -->
-        <file 
-          target="Scripts/ReaChord/ChordTrack.RTrackTemplate" 
-          url="https://github.com/xupeng1206/ReaChord/raw/v1.6.0/ChordTrack.RTrackTemplate" 
-          type="tracktemplate"
-        />
+        
       </version>
     </package>
   </category>
