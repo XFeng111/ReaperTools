@@ -1,16 +1,67 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <reapack>
+  <!-- 仓库元数据：必须包含 -->
   <repositories>
-    <!-- 仓库基本信息 -->
-    <repository name="你的仓库名称" author="你的名字" url="仓库的raw地址（即这个index.xml的地址）"/>
+    <repository 
+      name="ReaTools" 
+      author="XFeng" 
+      url="https://raw.githubusercontent.com/xupeng1206/ReaChord/main/index.xml"  <!-- 此 XML 的 raw 地址 -->
+    />
   </repositories>
-  <packages>
-    <!-- 包1的信息 -->
-    <package name="工具包名称" author="作者" version="1.0.0" license="MIT" description="工具描述">
-      <!-- 包内文件映射：本地安装路径 → GitHub原始文件地址 -->
-      <file target="Scripts/你的工具.lua">https://raw.githubusercontent.com/XFeng111/ReaperApi_Lua/main/Toolbox_Custom/你的工具.lua</file>
-      <!-- 可添加多个file标签对应不同文件 -->
+
+  <!-- 包分类 -->
+  <category name="Tracks">
+    <!-- 包信息：name 是显示名称，type 固定为 "script" 表示脚本包 -->
+    <package 
+      name="ReaChord: a chord track solution for REAPER 7" 
+      type="script" 
+      author="xupeng1206" 
+      version="1.6.0"  <!-- 版本号 -->
+      license="未知"  <!-- 建议补充许可证（如 MIT） -->
+      description="ReaChord 和弦轨道解决方案"  <!-- 简要描述 -->
+    >
+      <!-- 版本信息：时间格式需符合 ISO 8601 -->
+      <version time="2025-04-14T06:52:18Z">
+        <!-- 主脚本文件：main="true" 标记入口文件 -->
+        <file 
+          target="Scripts/ReaChord/ReaChord_Main.lua"  <!-- 安装路径（Reaper 脚本目录下） -->
+          url="https://github.com/xupeng1206/ReaChord/raw/v1.6.0/ReaChord_Main.lua" 
+          type="script"
+          main="true"
+        />
+        <file 
+          target="Scripts/ReaChord/ReaChord_Act_Item2Sound.lua" 
+          url="https://github.com/xupeng1206/ReaChord/raw/v1.6.0/ReaChord_Act_Item2Sound.lua" 
+          type="script"
+        />
+        <file 
+          target="Scripts/ReaChord/ReaChord_Reader.lua" 
+          url="https://github.com/xupeng1206/ReaChord/raw/v1.6.0/ReaChord_Reader.lua" 
+          type="script"
+        />
+        <!-- 其他 Lua 脚本类似，省略... -->
+
+        <!-- 文档文件：type 改为 "doc" -->
+        <file 
+          target="Scripts/ReaChord/README.md" 
+          url="https://github.com/xupeng1206/ReaChord/raw/v1.6.0/README.md" 
+          type="doc"
+        />
+
+        <!-- 图片文件：type 改为 "image" -->
+        <file 
+          target="Scripts/ReaChord/ReaChord_About.jpg" 
+          url="https://github.com/xupeng1206/ReaChord/raw/v1.6.0/ReaChord_About.jpg" 
+          type="image"
+        />
+
+        <!-- 轨道模板：type 改为 "tracktemplate" -->
+        <file 
+          target="Scripts/ReaChord/ChordTrack.RTrackTemplate" 
+          url="https://github.com/xupeng1206/ReaChord/raw/v1.6.0/ChordTrack.RTrackTemplate" 
+          type="tracktemplate"
+        />
+      </version>
     </package>
-    <!-- 可添加多个package标签 -->
-  </packages>
+  </category>
 </reapack>
