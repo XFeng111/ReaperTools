@@ -5,7 +5,7 @@
     <repository 
       name="ReaTools" 
       author="XFeng" 
-      url="https://raw.githubusercontent.com/xupeng1206/ReaChord/main/index.xml"  <!-- 此 XML 的 raw 地址 -->
+      url="https://github.com/XFeng111/Reaper_Tools/raw/refs/heads/main/index.xml"  <!-- 此 XML 的 raw 地址 -->
     />
   </repositories>
 
