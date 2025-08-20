@@ -1,25 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?>
-<reapack>
-  <!-- 仓库元数据：必须包含 -->
-  <repositories>
-    <repository 
-      name="F_ReaTools" 
-      author="XFeng" 
-      url="https://github.com/XFeng111/ReaperTools/raw/refs/heads/main/index.xml"  <!-- 修复 URL 中的空格为 %20 -->
-    />
-  </repositories>
+<?xml version="1.0" encoding="utf8"?>
+<index version="1" name="ReaChord">
+  <category name="Tracks">
+    <reapack name="ReaChord: a chord track solution for REAPER 7" type="script">
+      <version name="1.6.0" author="xupeng1206" time="2025-04-14T06:52:18Z">
+        <source main="main" file="../ReaChord_Main.lua" type="script">https://github.com/xupeng1206/ReaChord/raw/v1.6.0/ReaChord_Main.lua</source>
+        <source main="main" file="../ReaChord_Act_Item2Sound.lua" type="script">https://github.com/xupeng1206/ReaChord/raw/v1.6.0/ReaChord_Act_Item2Sound.lua</source>
+        <source main="main" file="../ReaChord_Reader.lua" type="script">https://github.com/xupeng1206/ReaChord/raw/v1.6.0/ReaChord_Reader.lua</source>
+        <source main="main" file="../ReaChord_ColorPalette.lua" type="script">https://github.com/xupeng1206/ReaChord/raw/v1.6.0/ReaChord_ColorPalette.lua</source>
+        <source main="main" file="../ReaChord_NoteReader.lua" type="script">https://github.com/xupeng1206/ReaChord/raw/v1.6.0/ReaChord_NoteReader.lua</source>
+        <source main="main" file="../ReaChord_InputChordReader.lua" type="script">https://github.com/xupeng1206/ReaChord/raw/v1.6.0/ReaChord_InputChordReader.lua</source>
+        <source file="../README.md" type="script">https://github.com/xupeng1206/ReaChord/raw/v1.6.0/README.md</source>
+        <source file="../ReaChord_About.jpg" type="script">https://github.com/xupeng1206/ReaChord/raw/v1.6.0/ReaChord_About.jpg</source>
+        <source file="../ReaChord_Reaper.lua" type="script">https://github.com/xupeng1206/ReaChord/raw/v1.6.0/ReaChord_Reaper.lua</source>
+        <source file="../ReaChord_Theory.lua" type="script">https://github.com/xupeng1206/ReaChord/raw/v1.6.0/ReaChord_Theory.lua</source>
+        <source file="../ReaChord_Util.lua" type="script">https://github.com/xupeng1206/ReaChord/raw/v1.6.0/ReaChord_Util.lua</source>
+        <source file="../ChordTrack.RTrackTemplate" type="tracktpl">https://github.com/xupeng1206/ReaChord/raw/v1.6.0/ChordTrack.RTrackTemplate</source>
+      </version>
+      <metadata>
+        <description>ReaChord</description>
+      </metadata>
+    </reapack>
+  </category>
+  <metadata>
+    <description>ReaChord</description>
+  </metadata>
+</index>
 
-  <!-- 包分类 -->
-  <category name="F_ReaTools">
-    <!-- 包信息：name 是显示名称，type 固定为 "script" 表示脚本包 -->
-    <package 
-      name="F_Tool: ReaTools for REAPER 7" 
-      type="script" 
-      author="XFeng" 
-      version="1.0.0"  <!-- 版本号 -->
-      license="未知"  <!-- 建议补充许可证（如 MIT） -->
-      description="F_ReaTools "  <!-- 简要描述 -->
-    >
+
       <!-- 版本信息：时间格式需符合 ISO 8601 -->
       <version time="2025-08-20T06:52:18Z">
         <!-- 主脚本文件：main="true" 标记入口文件 -->
