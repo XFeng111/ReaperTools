@@ -10,7 +10,7 @@
   </repositories>
 
   <!-- 包分类 -->
-  <category name="F_Tool">
+  <category name="F_ReaTools">
     <!-- 包信息：name 是显示名称，type 固定为 "script" 表示脚本包 -->
     <package 
       name="F_Tool: ReaTools for REAPER 7" 
@@ -18,28 +18,61 @@
       author="XFeng" 
       version="1.0.0"  <!-- 版本号 -->
       license="未知"  <!-- 建议补充许可证（如 MIT） -->
-      description="F_Tool "  <!-- 简要描述 -->
+      description="F_ReaTools "  <!-- 简要描述 -->
     >
       <!-- 版本信息：时间格式需符合 ISO 8601 -->
       <version time="2025-08-20T06:52:18Z">
         <!-- 主脚本文件：main="true" 标记入口文件 -->
         <file 
-          target="Scripts/F_ReaTools/F_Tool/.lua"  <!-- 安装路径（Reaper 脚本目录下） -->
+          target="Scripts/Toolbox_Custom/F_Tool/F_region范围适应items.lua"  <!-- 安装路径（Reaper 脚本目录下） -->
           url="https://github.com/XFeng111/Reaper_Tools/raw/refs/heads/main/Toolbox_Custom/F_Tool/F_region%E8%8C%83%E5%9B%B4%E9%80%82%E5%BA%94items.lua" 
           type="script"
           main="true"
         />
         <file 
-          target="Scripts/ReaChord/ReaChord_Act_Item2Sound.lua" 
-          url="https://github.com/xupeng1206/ReaChord/raw/v1.6.0/ReaChord_Act_Item2Sound.lua" 
+          target="Scripts/Toolbox_Custom/F_Tool/F_从TXT文件读取名称创建连续的regions.lua" 
+          url="https://github.com/XFeng111/Reaper_Tools/raw/refs/heads/main/Toolbox_Custom/F_Tool/F_%E4%BB%8ETXT%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E5%90%8D%E7%A7%B0%E5%88%9B%E5%BB%BA%E8%BF%9E%E7%BB%AD%E7%9A%84regions.lua" 
           type="script"
         />
         <file 
-          target="Scripts/ReaChord/ReaChord_Reader.lua" 
-          url="https://github.com/xupeng1206/ReaChord/raw/v1.6.0/ReaChord_Reader.lua" 
+          target="Scripts/Toolbox_Custom/F_Tool/F_时间选区下内容删除(含item轨道).lua" 
+          url="https://github.com/XFeng111/Reaper_Tools/raw/refs/heads/main/Toolbox_Custom/F_Tool/F_%E6%97%B6%E9%97%B4%E9%80%89%E5%8C%BA%E4%B8%8B%E5%86%85%E5%AE%B9%E5%88%A0%E9%99%A4(%E5%90%ABitem%E8%BD%A8%E9%81%93).lua" 
           type="script"
         />
-        <!-- 其他 Lua 脚本类似，省略... -->
+        <file 
+          target="Scripts/Toolbox_Custom/F_Tool/F_白色标记区域下所有内容删除(含item轨道).lua" 
+          url="https://github.com/XFeng111/Reaper_Tools/raw/refs/heads/main/Toolbox_Custom/F_Tool/F_%E7%99%BD%E8%89%B2%E6%A0%87%E8%AE%B0%E5%8C%BA%E5%9F%9F%E4%B8%8B%E6%89%80%E6%9C%89%E5%86%85%E5%AE%B9%E5%88%A0%E9%99%A4(%E5%90%ABitem%E8%BD%A8%E9%81%93).lua" 
+          type="script"
+        />
+        <file
+          target="Scripts/Toolbox_Custom/LKC_Ext/T_LKC_Structure.lua" 
+          url="https://github.com/XFeng111/Reaper_Tools/raw/refs/heads/main/Toolbox_Custom/LKC_Ext/T_LKC_Structure.lua" 
+          type="script"
+        />
+        <file
+          target="Scripts/Toolbox_Custom/LKC_Ext/T_LKC_Structure_Make.lua" 
+          url="https://github.com/XFeng111/Reaper_Tools/raw/refs/heads/main/Toolbox_Custom/LKC_Ext/T_LKC_Structure_Make.lua" 
+          type="script"
+        />
+        <file
+          target="Scripts/Toolbox_Custom/LKC_Ext/LKC_Ext_Steps/T_父轨设置RandomContainer_时间选区（多个）.lua" 
+          url="https://github.com/XFeng111/Reaper_Tools/raw/refs/heads/main/Toolbox_Custom/LKC_Ext/LKC_Ext_Steps/T_%E7%88%B6%E8%BD%A8%E8%AE%BE%E7%BD%AERandomContainer_%E6%97%B6%E9%97%B4%E9%80%89%E5%8C%BA%EF%BC%88%E5%A4%9A%E4%B8%AA%EF%BC%89.lua" 
+          type="script"
+        />
+        <file
+          target="Scripts/Toolbox_Custom/LKC_Ext/LKC_Ext_Steps/T_父轨下迭代.lua" 
+          url="https://github.com/XFeng111/Reaper_Tools/raw/refs/heads/main/Toolbox_Custom/LKC_Ext/LKC_Ext_Steps/T_%E7%88%B6%E8%BD%A8%E4%B8%8B%E8%BF%AD%E4%BB%A3.lua" 
+          type="script"
+        />
+          
+        <!-- 
+          其他 Lua 脚本类似，省略... 
+          <file
+            target="Scripts/" 
+            url="" 
+            type="script"
+          />
+          -->
         
       </version>
     </package>
