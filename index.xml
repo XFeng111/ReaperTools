@@ -1,70 +1,46 @@
-<?xml version="1.0" encoding="utf8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 关键：ReaPack 仅认 <reapack> 为根元素，绝对不能用 <index>！ -->
 <reapack>
-    <!-- 仓库元数据：定义仓库来源与基础信息 -->
+    <!-- 1. 强制：仓库元数据（ReaPack 识别仓库的唯一依据） -->
     <repositories>
         <repository 
-            name="ReaperTools" 
-            author="XFeng" 
-            url="https://github.com/XFeng111/ReaperTools/raw/refs/heads/main/index.xml" 
-            description="REAPER 7 实用工具集（轨道管理、标记操作等）"
+            name="ReaperTools"                <!-- 仓库名称（任意，非空） -->
+            author="XFeng"                     <!-- 你的名字（非空） -->
+            url="https://github.com/XFeng11/ReaperTools/raw/refs/heads/main/index.xml"  <!-- 必须与你的导入链接完全一致 -->
+            description="REAPER 实用工具集：轨道管理、标记操作"  <!-- 非空描述 -->
         />
     </repositories>
 
-    <!-- 功能分类：归为「Tools」类，方便用户查找 -->
-    <category name="Tools">
-        <!-- 脚本包定义：使用 <package> 确保 ReaPack 层级规范 -->
-        <package name="ReaperTools: Tools for REAPER 7" type="script">
-            <!-- 版本信息：保留原版本号、作者与时间 -->
+    <!-- 2. 强制：至少一个分类 + 一个脚本包（否则仓库为空） -->
+    <category name="Tools">  <!-- 分类名称（非空，如“工具”“轨道”） -->
+        <package name="ReaperTools: 核心工具" type="script">  <!-- 包名称（非空），类型固定为 script -->
+            <!-- 3. 强制：版本信息（必须有版本号、作者、时间） -->
             <version 
-                name="1.0.0" 
-                author="XFeng" 
-                time="2025-09-02T06:52:18Z"
-                compatibility="REAPER 7.0+"
+                name="1.0.0"                  <!-- 版本号（如 1.0.0） -->
+                author="XFeng"                <!-- 与仓库作者一致 -->
+                time="2025-09-10T12:00:00Z"   <!-- 时间格式（UTC，可改时分） -->
+                compatibility="REAPER 6.0+"    <!-- 兼容版本（非强制但建议加） -->
             >
-                <!-- 核心脚本：用 <source> 标签，main="main" 标记主脚本 -->
-                <source main="main" file="Scripts/Toolbox_Custom/F_Tool/F_region范围适应items.lua" type="script">
-                    https://github.com/XFeng111/ReaperTools/raw/refs/heads/main/Toolbox_Custom/F_Tool/F_region%E8%8C%83%E5%9B%B4%E9%80%82%E5%BA%94items.lua
-                </source>
-                <source main="main" file="Scripts/Toolbox_Custom/F_Tool/F_从TXT文件读取名称创建连续的regions.lua" type="script">
-                    https://github.com/XFeng111/ReaperTools/raw/refs/heads/main/Toolbox_Custom/F_Tool/F_%E4%BB%8ETXT%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E5%90%8D%E7%A7%B0%E5%88%9B%E5%BB%BA%E8%BF%9E%E7%BB%AD%E7%9A%84regions.lua
-                </source>
-                <source main="main" file="Scripts/Toolbox_Custom/F_Tool/F_时间选区下内容删除(含item轨道).lua" type="script">
-                    https://github.com/XFeng111/ReaperTools/raw/refs/heads/main/Toolbox_Custom/F_Tool/F_%E6%97%B6%E9%97%B4%E9%80%89%E5%8C%BA%E4%B8%8B%E5%86%85%E5%AE%B9%E5%88%A0%E9%99%A4(%E5%90%ABitem%E8%BD%A8%E9%81%93).lua
-                </source>
-                <source main="main" file="Scripts/Toolbox_Custom/F_Tool/F_白色标记区域下所有内容删除(含item轨道).lua" type="script">
-                    https://github.com/XFeng111/ReaperTools/raw/refs/heads/main/Toolbox_Custom/F_Tool/F_%E7%99%BD%E8%89%B2%E6%A0%87%E8%AE%B0%E5%8C%BA%E5%9F%9F%E4%B8%8B%E6%89%80%E6%9C%89%E5%86%85%E5%AE%B9%E5%88%A0%E9%99%A4(%E5%90%ABitem%E8%BD%A8%E9%81%93).lua
-                </source>
-                <source file="Scripts/Toolbox_Custom/LKC_Ext/T_LKC_Structure.lua" type="script">
-                    https://github.com/XFeng111/ReaperTools/raw/refs/heads/main/Toolbox_Custom/LKC_Ext/T_LKC_Structure.lua
-                </source>
-                <source file="Scripts/Toolbox_Custom/LKC_Ext/T_LKC_Structure_Make.lua" type="script">
-                    https://github.com/XFeng111/ReaperTools/raw/refs/heads/main/Toolbox_Custom/LKC_Ext/T_LKC_Structure_Make.lua
-                </source>
-                <source file="Scripts/Toolbox_Custom/LKC_Ext/LKC_Ext_Steps/T_父轨设置RandomContainer_时间选区（多个）.lua" type="script">
-                    https://github.com/XFeng111/ReaperTools/raw/refs/heads/main/Toolbox_Custom/LKC_Ext/LKC_Ext_Steps/T_%E7%88%B6%E8%BD%A8%E8%AE%BE%E7%BD%AERandomContainer_%E6%97%B6%E9%97%B4%E9%80%89%E5%8C%BA%EF%BC%88%E5%A4%9A%E4%B8%8B%E6%89%80%E6%9C%89%E5%86%85%E5%AE%B9%E5%88%A0%E9%99%A4(%E5%90%ABitem%E8%BD%A8%E9%81%93).lua
-                </source>
-                <source file="Scripts/Toolbox_Custom/LKC_Ext/LKC_Ext_Steps/T_父轨下迭代.lua" type="script">
-                    https://github.com/XFeng111/ReaperTools/raw/refs/heads/main/Toolbox_Custom/LKC_Ext/LKC_Ext_Steps/T_%E7%88%B6%E8%BD%A8%E4%B8%8B%E8%BF%AD%E4%BB%A3.lua
-                </source>
+                <!-- 4. 强制：至少一个脚本文件（URL 必须能访问到实际 .lua 文件） -->
+                <file 
+                    target="Scripts/F_region范围适应items.lua"  <!-- 安装路径（REAPER 脚本目录下的路径） -->
+                    url="https://github.com/XFeng111/ReaperTools/raw/refs/heads/main/Toolbox_Custom/F_Tool/F_region范围适应items.lua"  <!-- 你脚本的 Raw 链接（需确保存在） -->
+                    type="script"              <!-- 文件类型（脚本固定为 script） -->
+                    main="true"                <!-- 标记为主脚本（非强制，方便用户找到核心功能） -->
+                />
             </version>
 
-            <!-- 脚本包元数据：补充功能描述与搜索标签 -->
+            <!-- 5. 非强制但建议：包描述（帮助用户了解功能） -->
             <metadata>
-                <description>
-                    ReaperTools 是 REAPER 7 专用实用工具集，专注提升音频制作效率，包含四大核心功能：
-                    1. 标记区域与音频片段适配（F_region范围适应items）；
-                    2. TXT 批量创建连续标记（从TXT读取名称创建regions）；
-                    3. 内容批量删除（时间选区/白色标记区域，含轨道与片段）；
-                    4. LKC 轨道结构管理（父轨迭代、RandomContainer 设置）。
-                </description>
-                <tags>轨道管理, 标记操作, 批量处理, LKC, REAPER 7</tags>
-                <homepage>https://github.com/XFeng111/ReaperTools</homepage>
+                <description>ReaperTools 包含轨道管理、标记适配等实用脚本，提升 REAPER 制作效率。</description>
+                <tags>轨道管理, 标记操作, REAPER 工具</tags>  <!-- 搜索标签（方便用户找到） -->
+                <homepage>https://github.com/XFeng11/ReaperTools</homepage>  <!-- 你的仓库主页 -->
             </metadata>
         </package>
     </category>
 
-    <!-- 全局元数据：仓库整体说明 -->
+    <!-- 6. 非强制：全局仓库描述 -->
     <metadata>
-        <description>ReaperTools 仓库：汇总 REAPER 7 实用脚本，覆盖轨道、标记、结构管理场景，助力高效创作。</description>
+        <description>ReaperTools 仓库：专注于 REAPER 脚本开发，提供高效制作工具。</description>
     </metadata>
 </reapack>
