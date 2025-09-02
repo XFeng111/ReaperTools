@@ -5,7 +5,7 @@
         <repository 
             name="ReaperTools" 
             author="XFeng" 
-            url="https://github.com/XFeng111/Reaper_Tools/raw/refs/heads/main/index.xml" 
+            url="https://github.com/XFeng111/ReaperTools/raw/refs/heads/main/index.xml" 
             description="REAPER 7 实用工具集（轨道管理、标记操作等）"
         />
     </repositories>
