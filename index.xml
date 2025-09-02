@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf8"?>
-<index version="1" name="ReaperTools">
-  <category name="Tracks">
+<reapack>
+  <repositories>
+      <repository 
+        name="ReaperTools" 
+        author="XFeng" 
+        url="https://github.com/XFeng111/Reaper_Tools/raw/refs/heads/main/index.xml"  <!-- 此 XML 文件的 raw 地址 -->
+      />
+    </repositories>
+  <category name="Tools">
     <reapack name="ReaperTools: Tools for REAPER 7" type="script">
       <version name="1.0.0" author="XFeng" time="2025-09-02T06:52:18Z">
         <file 
